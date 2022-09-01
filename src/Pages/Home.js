@@ -1,9 +1,10 @@
 import React, { Component, useEffect, useState } from "react"
 import { connect, useSelector, useDispatch } from "react-redux"
 import { getData } from "../redux/actions/dataAction"
+import { Link } from "react-router-dom"
 
 const Home = () => {
-  const { data } = useSelector((state) => state)
+  const { data } = useSelector((state) => state.dataReducer)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -12,9 +13,14 @@ const Home = () => {
 
   return (
     <div>
-      {data.map((data) => (
-        <h3 key={data.id}>{data.email}</h3>
-      ))}
+      <div>
+        {data.map((data) => (
+          <h3 key={data.id}>{data.email}</h3>
+        ))}
+      </div>
+      <button>
+        <Link to="registration">Registration</Link>
+      </button>
     </div>
   )
 }
