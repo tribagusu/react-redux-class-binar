@@ -1,16 +1,25 @@
 import React, { Component } from "react"
-import { connect } from "react-redux"
+import { connect, useSelector } from "react-redux"
 
-class Home extends Component {
-  render() {
-    return <div>Home</div>
-  }
+const Home = () => {
+  const { data } = useSelector((state) => state)
+
+  return <div>{data}</div>
 }
 
-const mapStateToProps = (state) => {
-  return {
-    data: state.data,
-  }
-}
+export default Home
 
-export default Home(mapStateToProps)(connect)
+// class Home extends Component {
+//   render() {
+//     const { data } = this.props
+//     return <div>{data}</div>
+//   }
+// }
+
+// const mapStateToProps = (state) => {
+//   return {
+//     data: state.data,
+//   }
+// }
+
+// export default Home(mapStateToProps)(connect)
