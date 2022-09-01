@@ -1,10 +1,22 @@
-import React, { Component } from "react"
-import { connect, useSelector } from "react-redux"
+import React, { Component, useEffect, useState } from "react"
+import { connect, useSelector, useDispatch } from "react-redux"
+import { getData } from "../redux/actions/dataAction"
 
 const Home = () => {
   const { data } = useSelector((state) => state)
+  const dispatch = useDispatch()
 
-  return <div>{data}</div>
+  useEffect(() => {
+    dispatch(getData())
+  }, [])
+
+  return (
+    <div>
+      {data.map((data) => (
+        <h3>{data.email}</h3>
+      ))}
+    </div>
+  )
 }
 
 export default Home
