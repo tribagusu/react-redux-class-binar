@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div>
       {data.map((data) => (
-        <h3>{data.email}</h3>
+        <h3 key={data.id}>{data.email}</h3>
       ))}
     </div>
   )
