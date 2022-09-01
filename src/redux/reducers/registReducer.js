@@ -1,14 +1,14 @@
 import TYPES from "../types"
 
 const initState = {
-  data: "",
+  token: "",
 }
 
 const registReducer = (state = initState, action) => {
   switch (action.type) {
     case TYPES.REGIST_SUCCESS:
       return {
-        data: action.payload,
+        token: action.payload,
       }
     default:
       return state
