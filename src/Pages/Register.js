@@ -1,12 +1,12 @@
 import React, { useState } from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { handleRegist } from "../redux/actions/registAction"
+import { handleRegist } from "../redux/actions/authAction"
 
 const Register = () => {
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
 
-  const { token } = useSelector((state) => state.registReducer)
+  const { token } = useSelector((state) => state.authReducer)
   const dispatch = useDispatch()
 
   const handleEmail = (e) => {

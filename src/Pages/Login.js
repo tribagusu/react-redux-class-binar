@@ -1,14 +1,15 @@
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
 import { useState, useEffect } from "react"
-import { authAction } from "../redux/actions/authAction"
+import { handleLogin } from "../redux/actions/authAction"
 
 const Login = () => {
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
 
-  const { token } = useSelector((state) => state.authReducer)
+  const { tokenLogin } = useSelector((state) => state.authReducer)
   const dispatch = useDispatch()
+  console.log(tokenLogin)
 
   const handleEmail = (e) => {
     setEmail(e.target.value)
@@ -24,12 +25,12 @@ const Login = () => {
       email,
       password,
     }
-    dispatch(authAction(payload))
+    dispatch(handleLogin(payload))
   }
   return (
     <div>
       <div>
-        <h1>Register</h1>
+        <h1>Login</h1>
         <div>
           <form onSubmit={handleSubmit}>
             <div>

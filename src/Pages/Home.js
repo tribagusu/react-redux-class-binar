@@ -19,7 +19,10 @@ const Home = () => {
         ))}
       </div>
       <button>
-        <Link to="registration">Registration</Link>
+        <Link to="login">Login</Link>
+      </button>
+      <button>
+        <Link to="registration">Register</Link>
       </button>
     </div>
   )
