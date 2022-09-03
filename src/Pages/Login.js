@@ -1,12 +1,13 @@
-import React, { useState } from "react"
+import React from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { handleRegist } from "../redux/actions/registAction"
+import { useState, useEffect } from "react"
+import { authAction } from "../redux/actions/authAction"
 
-const Register = () => {
+const Login = () => {
   const [password, setPassword] = useState("")
   const [email, setEmail] = useState("")
 
-  const { token } = useSelector((state) => state.registReducer)
+  const { token } = useSelector((state) => state.authReducer)
   const dispatch = useDispatch()
 
   const handleEmail = (e) => {
@@ -23,9 +24,8 @@ const Register = () => {
       email,
       password,
     }
-    dispatch(handleRegist(payload))
+    dispatch(authAction(payload))
   }
-
   return (
     <div>
       <div>
@@ -46,11 +46,10 @@ const Register = () => {
             </div>
             <button>Submit</button>
           </form>
-          <p>{token}</p>
         </div>
       </div>
     </div>
   )
 }
 
-export default Register
+export default Login

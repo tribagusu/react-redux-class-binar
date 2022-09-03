@@ -1,7 +1,10 @@
-import registReducer from "./registReducer"
-import dataReducer from "./dataReducer"
 import { combineReducers } from "redux"
+import dataReducer from "./dataReducer"
+import authReducer from "./authReducer"
 
-const rootReducer = combineReducers({ registReducer, dataReducer })
+const rootReducer = combineReducers({
+  authReducer,
+  dataReducer,
+})
 
 export default rootReducer
