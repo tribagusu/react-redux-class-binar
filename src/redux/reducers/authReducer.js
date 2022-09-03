@@ -3,6 +3,7 @@ import TYPES from "../types"
 const initState = {
   token: "",
   tokenLogin: "",
+  isLogin: false,
 }
 
 const authReducer = (state = initState, action) => {
